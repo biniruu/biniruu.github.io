@@ -40,7 +40,7 @@ module.exports = {
     'no-console': 'off',
     'no-unused-vars': 'warn',
     'no-extra-semi': 'error',
-    'space-in-brackets': 'always',
+    'space-in-brackets': 'warn',
     quotes: [
       'warn',
       'single',
@@ -69,7 +69,7 @@ module.exports = {
     'no-array-constructor': 'error',
     'no-duplicate-imports': 'error',
     'no-inner-declarations': 'off',
-    '@typescript-eslint/no-var-requires': true,
+    '@typescript-eslint/no-var-requires': 'error',
   },
   // globals: {
   //   $nuxt: true,
