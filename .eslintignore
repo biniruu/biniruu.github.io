@@ -1,6 +1,4 @@
-/node_modules/**
-**/node_modules/**
+node_module
 .cache
 package.json
 package-lock.json
-public

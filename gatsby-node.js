@@ -1,5 +1,3 @@
-require('ts-node').register({ files: true })
-
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -13,7 +11,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }, limit: 1000) {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: ASC }
+          limit: 1000
+        ) {
           nodes {
             id
             fields {
@@ -22,11 +23,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-    `,
+    `
   )
 
   if (result.errors) {
-    reporter.panicOnBuild(`There was an error loading your blog posts`, result.errors)
+    reporter.panicOnBuild(
+      `There was an error loading your blog posts`,
+      result.errors
+    )
     return
   }
 
@@ -109,10 +113,3 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
   `)
 }
-
-/** @type { import("gatsby").GatsbyNode["createPages"] } */
-const createPages = (args, _opts) => {
-  args // You'll get auto-complete on args now
-}
-
-module.export.createPages = createPages
