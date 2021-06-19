@@ -74,4 +74,9 @@ module.exports = {
   // globals: {
   //   $nuxt: true,
   // },
+  settings: {
+    'import/resolver': {
+      alias: [['@', './src']],
+    },
+  },
 }
